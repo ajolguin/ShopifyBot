@@ -28,8 +28,7 @@ def availabilityCheck():
         productname = product['title']
         
         
-        
-        # Replace quote with name of Item you want
+        # Replace quote with name of Item you want from that website
         if productname == 'TIRED T-SHIRT':
         
             producturl = websiteURL + '/products/' + product['handle']
@@ -43,7 +42,8 @@ def buyProduct(url):
     driver.get(str(url))
     
     """
-    The code below only works for the bdgastore website as it is hardcoded
+    The code below only works for the bdgastore website as it is 
+    currently hardcoded
    
     """
     
