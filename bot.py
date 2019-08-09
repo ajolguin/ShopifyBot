@@ -9,28 +9,30 @@ import json
 import time
 from selenium import webdriver
 
-def availabilityCheck():
 
-    """
-    Replace quote with website you want the bot to
-    get the item from with (/products.json) at the end
-    of the url
+"""
+    Replace websiteURL with website you want the bot to
+    get the item
     MUST BE A SHOPIFY WEBSITE
-    """
-    r = requests.get('https://bdgastore.com/products.json')
+"""
+
+websiteURL = 'https://bdgastore.com'
+
+def availabilityCheck():
+    
+    r = requests.get(websiteURL + '/products.json')
     products = json.loads((r.text))['products']
     
     for product in products:
         print(product['title'])
         productname = product['title']
         
-        """
-        Replace quote with name of Item you want
-        """
         
+        
+        # Replace quote with name of Item you want
         if productname == 'TIRED T-SHIRT':
         
-            producturl = 'https://bdgastore.com/products/' + product['handle']
+            producturl = websiteURL + '/products/' + product['handle']
             print('Item Found')
             return producturl
         else:
@@ -39,6 +41,11 @@ def availabilityCheck():
 def buyProduct(url):
     driver = webdriver.Chrome(executable_path=r'/Users/adrianolguin/Desktop/chromedriver')
     driver.get(str(url))
+    
+    """
+    The code below only works for the bdgastore website as it is hardcoded
+   
+    """
     
     #close pop up if it shows
     try:
@@ -60,33 +67,35 @@ def buyProduct(url):
     
     #enter email
     driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys('myemail@gmail.com')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter First Name
     driver.find_element_by_xpath('//input[@placeholder="First name"]').send_keys('Luis')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter Last Name
     driver.find_element_by_xpath('//input[@placeholder="Last name"]').send_keys('Hernandez')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter Street
     driver.find_element_by_xpath('//input[@placeholder="Address"]').send_keys('MY STREET ADDRESS')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter City
     driver.find_element_by_xpath('//input[@placeholder="City"]').send_keys('Norwalk')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter Zip
     driver.find_element_by_xpath('//input[@placeholder="ZIP code"]').send_keys('90650')
-    time.sleep(0.5)
+    time.sleep(0.25)
     
     #enter phone
     driver.find_element_by_xpath('//input[@data-backup="phone"]').click()
     time.sleep(1)
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('562')
+    time.sleep(1)
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('1234567')
+    time.sleep(0.25)
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys(u'\ue007')
     
     
