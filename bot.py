@@ -61,6 +61,14 @@ def buyProduct(url):
     driver.find_element_by_xpath('//button[@class="button full"]').click()
     time.sleep(3)
     
+    
+    
+    """
+    This following code WILL work for any Shopify website when checking out
+    as all Shopify websites have the same check out procedure
+    
+    """
+    
     #click check out
     driver.find_element_by_xpath('//input[@value="Check Out"]').click()
     time.sleep(3)
