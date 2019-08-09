@@ -8,3 +8,11 @@ Programs Used/Downloaded to Run:
 4. sudo pip install selenium
 5. sudo pip install requests bs4
 6. Python
+
+
+To Run:
+1. After installing all of the above, open Anaconda and go to Spyder
+2. Paste Bot.py file
+3. After downloading ChromeDriver, move the .exe file to your desktop
+4. Replace all fields with your respective information 
+5. Run
