@@ -61,17 +61,19 @@ def buyProduct(url):
     driver.find_element_by_xpath('//button[@class="button full"]').click()
     time.sleep(3)
     
+    driver.find_element_by_xpath('//input[@value="Check Out"]').click()
+    time.sleep(3)
     
+   
     
     """
     This following code WILL work for any Shopify website when checking out
     as all Shopify websites have the same check out procedure
     
     """
+     
     
-    #click check out
-    driver.find_element_by_xpath('//input[@value="Check Out"]').click()
-    time.sleep(3)
+    #REPLACE THE FOLLOWING INFORMATION INSIDE THE PARENTHESES OF "send_keys"
     
     #enter email
     driver.find_element_by_xpath('//input[@placeholder="Email"]').send_keys('myemail@gmail.com')
@@ -97,13 +99,19 @@ def buyProduct(url):
     driver.find_element_by_xpath('//input[@placeholder="ZIP code"]').send_keys('90650')
     time.sleep(0.25)
     
-    #enter phone
+    #DO NOT MODIFY
     driver.find_element_by_xpath('//input[@data-backup="phone"]').click()
     time.sleep(1)
+    
+    #enter area code
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('562')
     time.sleep(1)
+    
+    #enter number
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('1234567')
     time.sleep(0.25)
+
+    #DO NOT MODIFY
     driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys(u'\ue007')
     
     
