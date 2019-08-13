@@ -82,11 +82,11 @@ def buyProduct(url):
     time.sleep(0.25)
     
     #enter First Name
-    driver.find_element_by_xpath('//input[@placeholder="First name"]').send_keys('John')
+    driver.find_element_by_xpath('//input[@placeholder="First name"]').send_keys('Luis')
     time.sleep(0.25)
     
     #enter Last Name
-    driver.find_element_by_xpath('//input[@placeholder="Last name"]').send_keys('Doe')
+    driver.find_element_by_xpath('//input[@placeholder="Last name"]').send_keys('Hernandez')
     time.sleep(0.25)
     
     #enter Street
@@ -94,11 +94,11 @@ def buyProduct(url):
     time.sleep(0.25)
     
     #enter City
-    driver.find_element_by_xpath('//input[@placeholder="City"]').send_keys('My City')
+    driver.find_element_by_xpath('//input[@placeholder="City"]').send_keys('Norwalk')
     time.sleep(0.25)
     
     #enter Zip
-    driver.find_element_by_xpath('//input[@placeholder="ZIP code"]').send_keys('12345')
+    driver.find_element_by_xpath('//input[@placeholder="ZIP code"]').send_keys('90650')
     time.sleep(0.25)
     
     #DO NOT MODIFY
@@ -106,7 +106,7 @@ def buyProduct(url):
     time.sleep(1)
     
     #enter area code
-    driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('888')
+    driver.find_element_by_xpath('//input[@data-backup="phone"]').send_keys('562')
     time.sleep(1)
     
     #enter number
